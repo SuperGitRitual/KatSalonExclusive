@@ -1,0 +1,375 @@
+/* Importar fuentes locales */
+@font-face {
+  font-family: 'NoisyWalk';
+  /* Ruta de la fuente: ./ significa el directorio actual (donde está style.css) */
+  src: url('./Fonts/NoisyWalk.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat-Regular'; 
+  /* Ruta de la fuente: ./ significa el directorio actual (donde está style.css) */
+  src: url('./Fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: Arial, sans-serif; /* Fuente de respaldo por defecto */
+  background-color: #1a1a1a; /* Fondo muy oscuro */
+  color: #f0f0f0; /* Texto blanco/gris claro */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Banner Principal del Salón con TRES IMÁGENES (las 3 personas) */
+.main-salon-banner {
+  width: 100%;
+  height: auto; /* Altura se ajusta al contenido */
+  background-color: #000; /* Fondo negro para que coincida con el posible fondo de tus imágenes */
+  display: flex;
+  justify-content: center; /* Centra el grupo de imágenes en el banner */
+  align-items: center;
+  overflow: hidden;
+  padding: 30px 0; /* Espacio arriba y abajo del grupo de imágenes */
+  margin-bottom: 50px; /* Margen debajo del banner para separarlo del título */
+}
+
+.banner-image-container {
+  display: flex;
+  justify-content: center; /* Centra las imágenes dentro de su contenedor flexible */
+  align-items: center; /* Asegura que se alineen en el centro vertical si las imágenes tienen alturas ligeramente diferentes */
+  gap: 20px; /* El espacio entre las imágenes, puedes ajustarlo si necesitas más o menos */
+  flex-wrap: wrap; /* Permite que las imágenes se envuelvan en pantallas pequeñas */
+  max-width: 900px; /* Ancho máximo para el grupo de imágenes (3 x 250px + 2 x 20px = 790px, 900px da margen) */
+}
+
+.banner-image-container img {
+  width: 250px; /* Tamaño que tenías originalmente y funcionaba bien para 3 en línea */
+  height: 250px; /* Mantienen la relación de aspecto como un cuadrado */
+  object-fit: cover; /* Recorta la imagen para que cubra el área sin distorsión, manteniendo su proporción */
+  object-position: center; /* Intenta centrar el contenido de la imagen dentro del cuadrado */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6); /* Sombra para dar profundidad */
+  border: 2px solid #333; /* Un borde sutil para definir el límite */
+  flex-shrink: 0; /* IMPORTE: Evita que las imágenes se encojan en pantallas más grandes si el espacio lo permite */
+}
+
+/* --- Sección de la portada (TÍTULO Y SUBTÍTULO) --- */
+.hero-portada {
+  background-color: #1a1a1a; /* Fondo igual al del body para un look continuo */
+  padding: 0 20px; /* Padding para evitar que el texto toque los bordes en móvil */
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 50px; /* Margen inferior para separar del catálogo */
+}
+
+.hero-title-portada {
+  font-family: 'NoisyWalk', Arial, sans-serif;
+  font-size: 5.5em; /* Título grande */
+  color: #ff8c00;
+  margin: 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.hero-subtitle-portada {
+  font-style: italic;
+  color: #ccc;
+  font-size: 1.3em;
+  margin-top: 10px; /* Espacio entre el título y el subtítulo */
+  margin-bottom: 0;
+}
+
+/* --- Sección de Descripción Larga (COLOCADA AL FINAL DEL CONTENIDO PRINCIPAL) --- */
+.description-portada {
+  padding: 60px 20px; /* Más padding para que se vea como una sección separada */
+  max-width: 800px;
+  line-height: 1.7;
+  text-align: center; /* Centrar el texto */
+  margin: 50px auto; /* Margen arriba y abajo para separarlo de otras secciones */
+  background-color: #2c2c2c; /* Un fondo ligeramente diferente */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+
+/* Aplicar Montserrat-Regular al párrafo dentro de .description-portada */
+.description-portada p {
+  font-family: 'Montserrat-Regular', sans-serif; /* Aplica Montserrat-Regular y sans-serif como respaldo */
+  margin-bottom: 15px;
+}
+
+/* --- Sección de catálogo de herramientas (ÚNICA SECCIÓN DE PRODUCTOS) --- */
+.catalog-portada {
+  padding: 50px 20px; /* Padding general de la sección */
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #222; /* Un fondo diferente para esta sección */
+  margin-top: 0; /* Ya se separa por el margen de hero-portada */
+  margin-bottom: 50px; /* Margen para separar de la descripción Larga */
+}
+
+.catalog-portada h2 {
+  font-size: 2.2em;
+  color: #f0f0f0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #ff8c00;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.catalog-links-portada {
+  margin-bottom: 40px; /* Espacio debajo de los enlaces de categoría */
+}
+
+.catalog-links-portada a {
+  color: #f0f0f0;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+.catalog-links-portada a:hover {
+  color: #ff8c00;
+}
+
+/* Contenedor para agrupar todas las herramientas (all-tools-display) */
+.all-tools-display {
+  max-width: 1200px; /* Ancho máximo para la galería de productos */
+  margin: 0 auto;
+  padding: 30px 0; /* Padding interno para separar los productos del borde de la sección */
+  background-color: #2c2c2c; /* Fondo para el área de herramientas */
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos para cada categoría de producto */
+.product-category {
+  margin-bottom: 60px; /* Espacio entre categorías de productos */
+  padding-top: 20px;
+}
+
+.product-category:last-child {
+  margin-bottom: 0; /* Elimina el margen inferior de la última categoría para que no haya espacio extra antes de la descripción */
+}
+
+.product-category h3 {
+  font-size: 1.8em;
+  color: #ff8c00;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #ff8c00;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Estilos para el contenedor de ítems de herramientas (las tarjetas de producto) */
+.tools-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.tool-item {
+  background-color: #333; /* Fondo oscuro de la tarjeta */
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 220px; /* Ancho fijo para las tarjetas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+  display: flex; /* Añadimos flexbox para mejor alineación interna */
+  flex-direction: column; /* Organiza el contenido en columna: imagen, luego título */
+  justify-content: space-between; /* Empuja la imagen hacia arriba y el título hacia abajo */
+  align-items: center; /* Centra el contenido horizontalmente */
+  min-height: 280px; /* Asegura una altura mínima uniforme para todas las tarjetas */
+  box-sizing: border-box; /* Incluye padding en el ancho/alto */
+}
+
+.tool-item:hover {
+  transform: translateY(-5px);
+}
+
+.tool-item img {
+  max-width: 100%; /* Asegura que la imagen no desborde el ancho de la tarjeta */
+  height: 150px; /* Altura fija para todas las imágenes de producto */
+  object-fit: contain; /* Escala la imagen para que quepa completamente dentro del área, manteniendo su relación de aspecto. */
+  background-color: #333; /* Fondo de la imagen para que coincida con la tarjeta si la imagen tiene fondo blanco */
+  display: block;
+  margin: 0 auto 15px auto; /* Centra la imagen y da margen inferior */
+  border-radius: 4px;
+}
+
+.tool-item h3 {
+  font-size: 1.1em;
+  margin-top: auto; /* Empuja el título hacia abajo dentro del flex container */
+  color: #f0f0f0;
+  line-height: 1.3; /* Espaciado entre líneas para títulos largos */
+}
+
+/* --- Footer --- */
+footer {
+  background-color: #222;
+  color: #ccc;
+  padding: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 50px; /* Margen superior para separarlo del contenido final */
+}
+
+/* --- Estilos Responsivos (Media Queries) --- */
+
+/* Para pantallas de 768px de ancho o menos (móviles y tablets pequeñas) */
+@media (max-width: 768px) {
+  /* Ajustes para el Banner Principal con tres imágenes */
+  .main-salon-banner {
+      padding: 15px 0;
+      margin-bottom: 30px; /* Menor margen en móvil */
+  }
+  .banner-image-container {
+      flex-direction: column; /* Apila las imágenes verticalmente */
+      gap: 15px; /* Menor espacio entre imágenes apiladas */
+      max-width: 90%; /* Ancho más flexible */
+  }
+  .banner-image-container img {
+      width: 250px; /* Mantiene un tamaño razonable en móvil, se ajusta al 90% del contenedor */
+      height: 250px;
+      border-radius: 6px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Ajustes para el Hero de la portada (título y subtítulo) */
+  .hero-portada {
+      padding: 0 15px;
+      margin-bottom: 30px; /* Ajuste para móvil */
+  }
+  .hero-title-portada {
+      font-size: 2.5em;
+      letter-spacing: 1px;
+  }
+  .hero-subtitle-portada {
+      font-size: 0.9em;
+      margin-top: 5px;
+  }
+
+  /* Ajustes para el catálogo de herramientas */
+  .catalog-portada {
+      padding: 30px 15px;
+      margin-top: 0; /* Margen ya lo da .hero-portada */
+      margin-bottom: 40px; /* Ajuste para móvil, separa del texto de descripción */
+  }
+  .catalog-portada h2 {
+      font-size: 1.8em;
+  }
+  .catalog-links-portada {
+      margin-bottom: 25px;
+      flex-direction: column; /* Cambia a columna en móviles */
+      gap: 8px;
+  }
+  .catalog-links-portada a {
+      font-size: 0.9em;
+      padding: 5px 10px;
+  }
+
+  /* Contenedor general de herramientas */
+  .all-tools-display {
+      padding: 20px 0;
+  }
+
+  /* Ajustes para las categorías de producto */
+  .product-category {
+      margin-bottom: 40px;
+  }
+  .product-category h3 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+  }
+
+  /* Ajustes para los ítems de herramientas */
+  .tools-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+  }
+  .tool-item {
+      width: 80%; /* Ancho más flexible para móviles */
+      max-width: 300px; /* Asegura que no crezca demasiado */
+      min-height: 200px; /* Altura mínima ajustada para móviles */
+      padding: 15px;
+  }
+  .tool-item img {
+      height: 100px; /* Altura más pequeña para imágenes de producto en móviles */
+      margin-bottom: 10px;
+  }
+  .tool-item h3 {
+      font-size: 0.95em;
+  }
+
+  /* Ajustes para la sección de descripción larga */
+  .description-portada {
+      padding: 30px 20px;
+      margin: 30px auto;
+      text-align: left; /* Alineación a la izquierda para mejor lectura en móvil */
+  }
+}
+
+/* Para pantallas entre 769px y 1024px (tablets grandes y laptops pequeñas) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Ajustes para el Banner Principal con tres imágenes */
+  .main-salon-banner {
+      padding: 30px 0;
+      margin-bottom: 40px;
+  }
+  .banner-image-container img {
+      width: 200px;
+      height: 200px;
+  }
+
+  /* Ajustes generales */
+  .hero-title-portada {
+      font-size: 4em;
+      margin-bottom: 35px; /* Ajustado para tablets */
+  }
+  .hero-subtitle-portada {
+      font-size: 1.1em;
+  }
+
+  /* Catálogo de herramientas */
+  .catalog-portada {
+      padding: 40px 20px;
+      margin-top: 0; /* Margen lo da .hero-portada */
+      margin-bottom: 45px; /* Ajustado para tablets, separa de la descripción */
+  }
+  .all-tools-display {
+      padding: 25px 0;
+  }
+  .tools-container {
+      gap: 25px;
+  }
+  .tool-item {
+      width: 220px;
+      min-height: 280px; /* Asegura altura consistente */
+  }
+  /* Descripción larga */
+  .description-portada {
+      padding: 50px 30px;
+      margin: 40px auto;
+  }
+}
